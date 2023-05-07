@@ -1,0 +1,8 @@
+flask
+pandas
+numpy
+whois
+uvicorn
+joblib
+pickle5
+mysql-connector-python
