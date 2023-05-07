@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Website Detection Result</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='./root.css') }}">
+</head>
+<body>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even){background-color: #f2f2f2}
+    
+    th {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    .form__padding-right {
+    width: 1000px;
+    height: 500px;
+    border: 2px solid black;
+    overflow-y: scroll;
+    scrollbar-color: blue red;
+    scrollbar-width: thin;
+  }
+    </style>
+  
+  <div class="form">
+{% include "Header.html" %}
+  <div class="form__box">
+
+ <div class="form__right">
+      <div class="form__padding-right">
+        <table>
+          <tr>
+          <th>User ID</th>
+          <th>Url</th>
+          <th>Result</th>
+          </tr>
+	 {% for i in result %}
+          <tr>
+          <td>{{ i[0] }}</td>
+          <td>{{ i[1] }}</td>
+          <td>{{ i[2] }}</td>
+          </tr>
+          {% endfor %} 
+        </table>
+	</div>
+    </div>
+   
+  </div>
+
+{% include "Footer.html" %}
+</div>
+
+</body>
+</html>

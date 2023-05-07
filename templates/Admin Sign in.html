@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Website Detection Sign in</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='./root.css') }}">
+<style>
+  .form__right {
+  line-height: 26px;
+  width: 30%;
+}
+</style>
+</head>
+<body>
+<div class="form">
+  {% include "Header.html" %}
+  <div class="form__box">
+    <div class="form__left">
+      <div class="form__padding"><img class="form__image" src="https://icon-library.com/images/phishing-icon/phishing-icon-25.jpg"/></div>
+    </div>
+    <div class="form__right">
+      <div class="form__padding-right">
+        <form action="/admin home" method="POST">
+          <h1 class="form__title">Phishing Website Detection</h1>
+          <input class="form__email" type="text" name="email" placeholder="Email ID"/>
+	  <input class="form__password" type="password" name="password" placeholder="Password">
+          <input class="form__submit-btn" type="submit" value="Sign in"/>
+        </form>     
+	</div>
+    </div>
+  </div>
+  {% include "Footer.html" %}
+</div>
+</body>
+</html>

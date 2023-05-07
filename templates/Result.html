@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Phishing Website Detection Result</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'><link rel="stylesheet" href="{{ url_for('static', filename='./root.css') }}">
+<style>
+ table {
+  border-collapse: collapse;
+}
+ th {
+  background: #ffffff;
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 8px;
+}
+th {
+background-color: #00bfff;
+color: #ffffff;
+}
+
+tr:nth-child(even) {
+  background: #ffffff;
+}
+
+
+  .form__right {
+  line-height: 26px;
+  width: 50%;
+}
+  </style>
+</head>
+<body>
+<div class="form">
+{% include "Header.html" %}
+  <div class="form__box">
+    <div class="form__left">
+      <div class="form__padding"><img class="form__image" src="https://icon-library.com/images/phishing-icon/phishing-icon-25.jpg"/></div>
+    </div>
+    <div class="form__right">
+      <table>
+        <tr>
+          <th>Url</th>
+          <td>{{ url }}</td>
+        </tr>
+        <tr>
+          <th>Domain name</th>
+          <td>{{ domain["domain_name"] }}</td>
+        </tr>
+        <tr>
+          <th>Registration</th>
+          <td>{{ domain["registration"] }}</td>
+        </tr>
+        <tr>
+          <th>Org</th>
+          <td>{{ domain["org"] }}</td>
+        </tr>
+        <tr>
+          <th>State</th>
+          <td>{{ domain["state"] }}</td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td>{{ domain["country"] }}</td>
+        </tr>
+        <tr>
+          <th>Result</th>
+          <td>{{ predict }}</td>
+        </tr>
+      </table>
+      <div class="form__padding-right">
+        
+	</div>
+    </div>
+  </div>
+{% include "Footer.html" %}
+</div>
+
+</body>
+</html>
